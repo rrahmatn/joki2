@@ -1,10 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const Product = require("./product");
 const app = express();
-const Product = require("./product"); // Pastikan file "product.js" mengandung definisi skema produk
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 
 mongoose.set("strictQuery", true);
 mongoose
@@ -12,10 +8,6 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-
-    app.get("/", (req, res) => {
-        res.send("Express on Vercel");
-      });
 
     app.post("/product", async (req, res) => {
       console.log("Result", req.body);
@@ -32,7 +24,9 @@ mongoose
       }
     });
 
-  
+    app.get("/", (req, res) => {
+      res.send("Express on Vercel");
+    });
 
     app.get('/api', (req, res) => {
       res.setHeader('Content-Type', 'text/html');
@@ -73,6 +67,7 @@ mongoose
         res.json(error.message);
       }
     });
+  
 
 app.listen(3000, () => {
   console.log("Connected to server at 3000");
