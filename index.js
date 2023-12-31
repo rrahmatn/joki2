@@ -11,8 +11,7 @@ mongoose
   .connect("mongodb+srv://david:apaantuh11@pam.spi9mzl.mongodb.net/flutter", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  }).then(() => {
-    console.log("Connected to MongoDB");
+  })
 
     app.get("/", (req, res) => {
         res.send("Express on Vercel");
@@ -74,10 +73,6 @@ mongoose
         res.json(error.message);
       }
     });
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error.message);
-  });
 
 app.listen(3000, () => {
   console.log("Connected to server at 3000");
