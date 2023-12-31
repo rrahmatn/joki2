@@ -12,7 +12,6 @@ mongoose
 
     app.post("/product", async (req, res) => {
       console.log("Result", req.body);
-
       let data = Product(req.body);
 
       try {
