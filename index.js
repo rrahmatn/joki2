@@ -8,19 +8,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-mongoose.set("strictQuery", true);
-
-mongoose
-  .connect("mongodb+srv://david:apaantuh11@pam.spi9mzl.mongodb.net/flutter", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error.message);
-  });
+// mongoose
+//   .connect("mongodb+srv://david:apaantuh11@pam.spi9mzl.mongodb.net/flutter", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("Connected to MongoDB");
+//   })
+//   .catch((error) => {
+//     console.error("Error connecting to MongoDB:", error.message);
+//   });
 
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
