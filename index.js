@@ -1,5 +1,4 @@
 const express = require("express");
-const Product = require("./product"); 
 const app = express();
 
 app.get("/", (req, res) => {
