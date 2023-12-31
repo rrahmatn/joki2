@@ -4,8 +4,6 @@ const cors = require("cors");
 const app = express();
 const Product = require("./product"); // Pastikan file "product.js" mengandung definisi skema produk
 
-app.use(cors());
-
 // mongoose
 //   .connect("mongodb+srv://david:apaantuh11@pam.spi9mzl.mongodb.net/flutter", {
 //     useNewUrlParser: true,
