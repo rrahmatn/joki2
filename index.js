@@ -22,6 +22,10 @@ mongoose
     console.error("Error connecting to MongoDB:", error.message);
   });
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
 app.get("/product", async (req, res) => {
   try {
     let data = await Product.find();
@@ -29,10 +33,6 @@ app.get("/product", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-});
-
-app.get("/", (req, res) => {
-  res.send("Express on Vercel");
 });
 
 app.listen(5000, () => {
