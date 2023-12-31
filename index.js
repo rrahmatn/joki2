@@ -5,7 +5,6 @@ const app = express();
 const Product = require("./product"); // Pastikan file "product.js" mengandung definisi skema produk
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // mongoose
