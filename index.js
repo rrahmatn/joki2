@@ -26,14 +26,7 @@ app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 
-app.get("/product", async (req, res) => {
-  try {
-    let data = await Product.find();
-    res.status(200).json(data);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+
 
 app.listen(5000, () => {
   console.log("Running on port 5000.");
