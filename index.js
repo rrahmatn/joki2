@@ -1,6 +1,7 @@
 const express = require("express");
 const Product = require("./product");
 const app = express();
+const mongoose = require('mongoose')
 
 mongoose.set("strictQuery", true);
 mongoose
@@ -69,7 +70,7 @@ mongoose
     });
   
 
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log("Connected to server at 3000");
 });
 
